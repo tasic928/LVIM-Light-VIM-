@@ -6223,9 +6223,7 @@ ex_quit_all(exarg_T *eap)
 	return;
     int save_exiting = exiting;
     exiting = TRUE;
-    if (eap->forceit || !check_changed_any(FALSE, FALSE))
-	getout(0);
-    not_exiting(save_exiting);
+    getout(0);
 }
 
 /*

@@ -59,27 +59,57 @@
 #endif
 
 /*
- * Uncomment one of these to override the default.  For unix use a configure
- * argument, see Makefile.
+ * For LVIM, we force Tiny mode and disable EVERYTHING to reach 900KB.
  */
-#if !defined(FEAT_TINY) && !defined(FEAT_NORMAL) && !defined(FEAT_HUGE)
-// #define FEAT_TINY
-// #define FEAT_NORMAL
-// #define FEAT_HUGE
+#ifndef FEAT_TINY
+# define FEAT_TINY
 #endif
-
-/*
- * For Unix, Mac and Win32 use +huge by default.  These days CPUs are fast and
- * Memory is cheap.
- * Otherwise use +normal
- */
-#if !defined(FEAT_TINY) && !defined(FEAT_NORMAL) && !defined(FEAT_HUGE)
-# if defined(UNIX) || defined(MSWIN) || defined(MACOS_X)
-#  define FEAT_HUGE
-# else
-#  define FEAT_NORMAL
-# endif
-#endif
+#undef FEAT_NORMAL
+#undef FEAT_HUGE
+#undef FEAT_SOCKETSERVER
+#undef FEAT_CLIENTSERVER
+#undef WANT_SOCKETSERVER
+#undef FEAT_TERMINAL
+#undef FEAT_JOB_CHANNEL
+#undef FEAT_NETBEANS_INTG
+#undef FEAT_DIFF
+#undef FEAT_MENU
+#undef FEAT_BEVAL
+#undef FEAT_SIGNS
+#undef FEAT_CRYPT
+#undef FEAT_SPELL
+#undef FEAT_FOLDING
+#undef FEAT_BALLOON_EVAL
+#undef FEAT_BALLOON_EVAL_TERM
+#undef FEAT_MBYTE
+#undef FEAT_CSCOPE
+#undef FEAT_VIMINFO
+#undef FEAT_MOUSE
+#undef FEAT_MOUSE_XTERM
+#undef FEAT_MOUSE_NET
+#undef FEAT_MOUSE_DEC
+#undef FEAT_MOUSE_URXVT
+#undef FEAT_MOUSE_GPM
+#undef FEAT_SYSMOUSE
+#undef FEAT_MOUSE_JSB
+#undef FEAT_MOUSE_PTERM
+#undef FEAT_SEARCHPATH
+#undef FEAT_FIND_ID
+#undef FEAT_SESSION
+#undef FEAT_SMARTINDENT
+#undef FEAT_QUICKFIX
+#undef FEAT_WILDIGNORE
+#undef FEAT_AUTOCMD
+#undef FEAT_LIBCALL
+#undef FEAT_CMDL_INFO
+#undef FEAT_CMDL_COMPL
+#undef FEAT_USR_CMDS
+#undef FEAT_PROP_POPUP
+#undef FEAT_CONCEAL
+#undef FEAT_TERMINAL
+#undef FEAT_SOUND
+#undef FEAT_FLOAT
+#undef FEAT_EVAL
 
 /*
  * Each feature implies including the "smaller" ones.

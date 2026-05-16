@@ -1,6 +1,6 @@
 /* vi:set ts=8 sts=4 sw=4 noet:
  *
- * VIM - Vi IMproved		by Bram Moolenaar
+ #This is a fork of the vim text editor all credits to the creator(s)
  *
  * Do ":help uganda"  in Vim to read copying and usage conditions.
  * Do ":help credits" in Vim to see a list of people who contributed.
@@ -16,11 +16,11 @@
 #define VIM_TOSTR(a)			VIM_TOSTR_(a)
 
 // Values that change for a new release.
-#define VIM_VERSION_MAJOR		9
-#define VIM_VERSION_MINOR		2
-#define VIM_VERSION_BUILD		286
-#define VIM_VERSION_BUILD_BCD		0x11e
-#define VIM_VERSION_DATE_ONLY		"2026 Feb 14"
+#define VIM_VERSION_MAJOR		0
+#define VIM_VERSION_MINOR		0
+#define VIM_VERSION_BUILD		1
+#define VIM_VERSION_BUILD_BCD		0x001
+#define VIM_VERSION_DATE_ONLY		"2026 May 15"
 
 // Values based on the above
 #define VIM_VERSION_MAJOR_STR		VIM_TOSTR(VIM_VERSION_MAJOR)
@@ -48,7 +48,7 @@
 
 #define VIM_VERSION_PATCHLEVEL_STR	VIM_TOSTR(LEADZERO(VIM_VERSION_PATCHLEVEL))
 // Used by MacOS port; should be one of: development, alpha, beta, final
-#define VIM_VERSION_RELEASE		final
+#define VIM_VERSION_RELEASE		development
 
 /*
  * VIM_VERSION_NODOT is used for the runtime directory name.
@@ -56,10 +56,10 @@
  * VIM_VERSION_MEDIUM is used for the startup-screen.
  * VIM_VERSION_LONG is used for the ":version" command and "Vim -h".
  */
-#define VIM_VERSION_NODOT     "vim" VIM_VERSION_MAJOR_STR VIM_VERSION_MINOR_STR
-#define VIM_VERSION_SHORT     VIM_VERSION_MAJOR_STR "." VIM_VERSION_MINOR_STR
+#define VIM_VERSION_NODOT     "lvim001"
+#define VIM_VERSION_SHORT     "0.01"
 #define VIM_VERSION_MEDIUM    VIM_VERSION_SHORT
-#define VIM_VERSION_LONG_ONLY "VIM - Vi IMproved " VIM_VERSION_MEDIUM
+#define VIM_VERSION_LONG_ONLY "LVIM - Light Vim " VIM_VERSION_MEDIUM
 #define VIM_VERSION_LONG_HEAD VIM_VERSION_LONG_ONLY " (" VIM_VERSION_DATE_ONLY
 #define VIM_VERSION_LONG      VIM_VERSION_LONG_HEAD ")"
 #define VIM_VERSION_LONG_DATE VIM_VERSION_LONG_HEAD ", compiled "

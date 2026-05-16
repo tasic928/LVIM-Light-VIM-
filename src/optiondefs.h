@@ -438,7 +438,7 @@ static struct vimoption options[] =
 					    (char_u *)0L} SCTX_INIT},
     {"backspace",   "bs",   P_STRING|P_VIM|P_ONECOMMA|P_NODUP,
 			    (char_u *)&p_bs, PV_NONE, did_set_backspace, expand_set_backspace,
-			    {(char_u *)"", (char_u *)"indent,eol,start"} SCTX_INIT},
+			    {(char_u *)"indent,eol,start", (char_u *)"indent,eol,start"} SCTX_INIT},
     {"backup",	    "bk",   P_BOOL|P_VI_DEF|P_VIM,
 			    (char_u *)&p_bk, PV_NONE, NULL, NULL,
 			    {(char_u *)FALSE, (char_u *)0L} SCTX_INIT},
@@ -681,7 +681,7 @@ static struct vimoption options[] =
 			    // always returns TRUE for 'compatible'
     {"compatible",  "cp",   P_BOOL|P_RALL,
 			    (char_u *)&p_cp, PV_NONE, did_set_compatible, NULL,
-			    {(char_u *)TRUE, (char_u *)FALSE} SCTX_INIT},
+			    {(char_u *)FALSE, (char_u *)FALSE} SCTX_INIT},
     {"complete",    "cpt",  P_STRING|P_ALLOCED|P_VI_DEF|P_ONECOMMA|P_NODUP|P_MLE,
 			    (char_u *)&p_cpt, PV_CPT, did_set_complete, expand_set_complete,
 			    {(char_u *)".,w,b,u,t,i", (char_u *)0L}
@@ -1889,7 +1889,7 @@ static struct vimoption options[] =
     {"number",	    "nu",   P_BOOL|P_VI_DEF|P_RWIN,
 			    (char_u *)VAR_WIN, PV_NU,
 			    did_set_number_relativenumber, NULL,
-			    {(char_u *)FALSE, (char_u *)0L} SCTX_INIT},
+			    {(char_u *)TRUE, (char_u *)TRUE} SCTX_INIT},
     {"numberwidth", "nuw",  P_NUM|P_RWIN|P_VIM,
 #ifdef FEAT_LINEBREAK
 			    (char_u *)VAR_WIN, PV_NUW, did_set_numberwidth, NULL,
@@ -2235,7 +2235,7 @@ static struct vimoption options[] =
 			    SCTX_INIT},
     {"ruler",	    "ru",   P_BOOL|P_VIM|P_RSTAT,
 			    (char_u *)&p_ru, PV_NONE, NULL, NULL,
-			    {(char_u *)FALSE, (char_u *)TRUE} SCTX_INIT},
+			    {(char_u *)TRUE, (char_u *)TRUE} SCTX_INIT},
     {"rulerformat", "ruf",  P_STRING|P_VI_DEF|P_ALLOCED|P_RSTAT|P_MLE,
 #ifdef FEAT_STL_OPT
 			    (char_u *)&p_ruf, PV_NONE, did_set_rulerformat, NULL,
@@ -2400,7 +2400,7 @@ static struct vimoption options[] =
 			    {(char_u *)"", (char_u *)0L} SCTX_INIT},
     {"showcmd",	    "sc",   P_BOOL|P_VIM,
 			    (char_u *)&p_sc, PV_NONE, NULL, NULL,
-			    {(char_u *)FALSE, (char_u *)TRUE} SCTX_INIT},
+			    {(char_u *)TRUE, (char_u *)TRUE} SCTX_INIT},
     {"showcmdloc",  "sloc", P_STRING|P_RSTAT,
 			    (char_u *)&p_sloc, PV_NONE, did_set_showcmdloc, expand_set_showcmdloc,
 			    {(char_u *)"last", (char_u *)"last"} SCTX_INIT},
@@ -2412,7 +2412,7 @@ static struct vimoption options[] =
 			    {(char_u *)FALSE, (char_u *)0L} SCTX_INIT},
     {"showmode",    "smd",  P_BOOL|P_VIM,
 			    (char_u *)&p_smd, PV_NONE, NULL, NULL,
-			    {(char_u *)FALSE, (char_u *)TRUE} SCTX_INIT},
+			    {(char_u *)TRUE, (char_u *)TRUE} SCTX_INIT},
     {"showtabline", "stal", P_NUM|P_VI_DEF|P_RALL,
 			    (char_u *)&p_stal, PV_NONE, did_set_showtabline, NULL,
 			    {(char_u *)1L, (char_u *)0L} SCTX_INIT},

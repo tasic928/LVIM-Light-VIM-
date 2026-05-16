@@ -2211,14 +2211,20 @@ intro_message(
     char	*p;
     static char	*(lines[]) =
     {
-	N_("VIM - Vi IMproved"),
+	N_("██╗    ██╗   ██╗██╗███╗   ███╗"),
+	N_("██║    ██║   ██║██║████╗ ████║"),
+	N_("██║    ██║   ██║██║██╔████╔██║"),
+	N_("██║    ╚██╗ ██╔╝██║██║╚██╔╝██║"),
+	N_("███████╗╚████╔╝ ██║██║ ╚═╝ ██║"),
+	N_("╚══════╝ ╚═══╝  ╚═╝╚═╝     ╚═╝"),
+	N_("          LVIM - Light Vim"),
 	"",
 	N_("version "),
-	N_("by Bram Moolenaar et al."),
+	N_("by tasic928"),
 #ifdef MODIFIED_BY
 	" ",
 #endif
-	N_("Vim is open source and freely distributable"),
+	N_("LVIM is a fork of the open source text editor VIM!"),
 	"",
 	N_("Help poor children in Uganda!"),
 	N_("type  :help Kuwasha<Enter>    for information "),
@@ -2300,7 +2306,7 @@ intro_message(
 		    p = N_("menu  Help->Sponsor           for information    ");
 	    }
 	    if (*p != NUL)
-		do_intro_line(row, (char_u *)_(p), i == 2, 0);
+		do_intro_line(row, (char_u *)_(p), i == 8, 0);
 	    ++row;
 	}
     }
@@ -2350,7 +2356,7 @@ do_intro_line(
 							 mediumVersion + len);
 	    }
 	    else
-		sprintf((char *)vers + 3, ".%d", highest_patch());
+		sprintf((char *)vers + STRLEN(vers), ".%d", highest_patch());
 	}
 	col += (int)STRLEN(vers);
     }
